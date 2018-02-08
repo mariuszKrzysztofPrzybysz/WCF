@@ -3,7 +3,7 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    internal class CategoryInformationRequest
+    public class CategoryInformationRequest
     {
         [DataMember]
         public int CategoryId { get; set; }

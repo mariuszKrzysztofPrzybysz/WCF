@@ -5,7 +5,7 @@
     using CategoryInformationService.DataTransferObjects;
 
     [DataContract]
-    internal class CategoryInformationResponse
+    public class CategoryInformationResponse
     {
         [DataMember]
         public List<CategoryDto> Categories { get; set; }

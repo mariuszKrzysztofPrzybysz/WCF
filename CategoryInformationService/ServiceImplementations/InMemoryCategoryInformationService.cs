@@ -6,7 +6,7 @@
     using CategoryInformationService.Messages;
     using CategoryInformationService.ServiceContracts;
 
-    internal class InMemoryCategoryInformationService : ICategoryInformationService
+    public class InMemoryCategoryInformationService : ICategoryInformationService
     {
         private IEnumerable<CategoryDto> _inMemory()
         {

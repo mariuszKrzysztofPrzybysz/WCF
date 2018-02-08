@@ -4,7 +4,7 @@
     using CategoryInformationService.Messages;
 
     [ServiceContract]
-    internal interface ICategoryInformationService
+    public interface ICategoryInformationService
     {
         [OperationContract]
         CategoryInformationResponse GetCategoryInformation(CategoryInformationRequest request);

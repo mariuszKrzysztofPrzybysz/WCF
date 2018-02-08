@@ -3,7 +3,7 @@
     using System.Runtime.Serialization;
 
     [DataContract(Name = "Category", Namespace = "CategoryInformationService.Types")]
-    internal class CategoryDto
+    public class CategoryDto
     {
         [DataMember]
         public int CategoryId { get; set; }
