@@ -34,7 +34,7 @@
 
                 //Enable MEX
                 var smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
+                //smb.HttpGetEnabled = true;
                 host.Description.Behaviors.Add(smb);
                 host.AddServiceEndpoint(new ServiceMetadataEndpoint(new EndpointAddress($"{baseAddr.AbsoluteUri}mex")));
 
