@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationHosts.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationHosts.WindowsService", "CategoryInformationHosts.WindowsService\CategoryInformationHosts.WindowsService.csproj", "{D4DF897B-AD0C-4CD3-B048-18DA0490F81E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationHosts.WebHost", "CategoryInformationHosts.WebHost\CategoryInformationHosts.WebHost.csproj", "{CBEB4A48-4272-4991-962E-229A5C92AF05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D4DF897B-AD0C-4CD3-B048-18DA0490F81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4DF897B-AD0C-4CD3-B048-18DA0490F81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4DF897B-AD0C-4CD3-B048-18DA0490F81E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBEB4A48-4272-4991-962E-229A5C92AF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBEB4A48-4272-4991-962E-229A5C92AF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBEB4A48-4272-4991-962E-229A5C92AF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBEB4A48-4272-4991-962E-229A5C92AF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
