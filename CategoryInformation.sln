@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationHosts.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationClients.ChannelFactoryClient", "CategoryInformationClients.ChannelFactoryClient\CategoryInformationClients.ChannelFactoryClient.csproj", "{D6A57953-73AB-4D53-B52E-BF38DFE93848}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CategoryInformationClients.ServiceReferenceClient", "CategoryInformationClients.ServiceReferenceClient\CategoryInformationClients.ServiceReferenceClient.csproj", "{337A7B0E-249C-4FB5-A7B1-0ECEAE0D25F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D6A57953-73AB-4D53-B52E-BF38DFE93848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A57953-73AB-4D53-B52E-BF38DFE93848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6A57953-73AB-4D53-B52E-BF38DFE93848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{337A7B0E-249C-4FB5-A7B1-0ECEAE0D25F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{337A7B0E-249C-4FB5-A7B1-0ECEAE0D25F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{337A7B0E-249C-4FB5-A7B1-0ECEAE0D25F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{337A7B0E-249C-4FB5-A7B1-0ECEAE0D25F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

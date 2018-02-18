@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CategoryInformationService.Messages" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CategoryInformationService.Messages" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:81/CategoryInformationService.svc?xsd=xsd3" namespace="CategoryInformationService.Types" />
+  <xs:complexType name="CategoryInformationRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryInformationRequest" nillable="true" type="tns:CategoryInformationRequest" />
+  <xs:complexType name="CategoryInformationResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="CategoryInformationService.Types" minOccurs="0" name="Categories" nillable="true" type="q1:ArrayOfCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryInformationResponse" nillable="true" type="tns:CategoryInformationResponse" />
+</xs:schema>
