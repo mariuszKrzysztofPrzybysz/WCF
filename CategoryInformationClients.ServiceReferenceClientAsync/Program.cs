@@ -12,7 +12,7 @@
             Console.WriteLine("Press [ENTER] to call CategoryInformationService");
             Console.ReadKey();
 
-            using (CategoryInformationServiceClient client = new CategoryInformationServiceClient("BasicHttpBinding_ICategoryInformationService"))
+            using (CategoryInformationServiceClient client = new CategoryInformationServiceClient("WSHttpBinding_ICategoryInformationService"))
             {
                 client.GetCategoryInformationCompleted
                     += new EventHandler<GetCategoryInformationCompletedEventArgs>(client_GetCategoryInformationCompleted);
@@ -29,8 +29,21 @@
 
         private static void client_GetCategoryInformationCompleted(object sender, GetCategoryInformationCompletedEventArgs e)
         {
+            if (e.Error == null)
+            {
+                PrintResponce(e.Result);
+            }
+            else
+            {
+                Console.WriteLine("Async request exception");
+                Console.WriteLine(e.Error.Message);
+            }
+        }
+
+        private static void PrintResponce(CategoryInformationResponse responce)
+        {
             Console.WriteLine("Received responce");
-            foreach (var category in e.Result.Categories)
+            foreach (var category in responce.Categories)
             {
                 Console.WriteLine($"Id: {category.CategoryId}");
                 Console.WriteLine($"Name: {category.Name}");
