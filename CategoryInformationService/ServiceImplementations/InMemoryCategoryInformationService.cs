@@ -45,14 +45,30 @@
 
         public CategoryInformationResponse GetCategoryInformation(CategoryInformationRequest request)
         {
-            var categoryDto = _inMemory().SingleOrDefault(c => c.CategoryId == request.CategoryId);
-            var response = new CategoryInformationResponse
-            {
-                Categories = new List<CategoryDto>()
-            };
-            response.Categories.Add(categoryDto);
+            //var categoryDto = _inMemory().SingleOrDefault(c => c.CategoryId == request.CategoryId);
+            //var response = new CategoryInformationResponse
+            //{
+            //    Categories = new List<CategoryDto>()
+            //};
+            //response.Categories.Add(categoryDto);
 
-            return response;
+            //return response;
+            return ProcessRequesFor15Seconds(request);
+        }
+
+        private CategoryInformationResponse ProcessRequesFor15Seconds(CategoryInformationRequest request)
+        {
+            var categoryDto = _inMemory().SingleOrDefault(c => c.CategoryId == request.CategoryId);
+            var responce = new CategoryInformationResponse
+            {
+                Categories = new List<CategoryDto>
+                {
+                    categoryDto
+                }
+            };
+
+            System.Threading.Thread.Sleep(System.TimeSpan.FromSeconds(15));
+            return responce;
         }
     }
 }

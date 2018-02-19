@@ -7,25 +7,39 @@
     {
         private static void Main(string[] args)
         {
-            using (CategoryInformationServiceClient client = new CategoryInformationServiceClient("BasicHttpBinding_ICategoryInformationService"))
+            using (CategoryInformationServiceClient client = new CategoryInformationServiceClient("WSHttpBinding_ICategoryInformationService"))
             {
-                var responce = client.GetCategoryInformation(new CategoryInformationRequest
+                CategoryInformationResponse responce = null;
+                try
                 {
-                    CategoryId = 1
-                });
+                    responce = client.GetCategoryInformation(new CategoryInformationRequest
+                    {
+                        CategoryId = 1
+                    });
 
-                Console.WriteLine("Received responce");
-                foreach (var category in responce.Categories)
+                    PrintResponce(responce);
+                }
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Id: {category.CategoryId}");
-                    Console.WriteLine($"Name: {category.Name}");
-                    Console.WriteLine($"Description: {category.Description}");
-                    Console.WriteLine($"Photo: {category.Photo}");
-
-                    Console.WriteLine();
+                    Console.WriteLine(ex.Message);
                 }
 
-                Console.ReadKey();
+                Console.WriteLine("Press [ENTER] to close client");
+                Console.ReadLine();
+            }
+        }
+
+        private static void PrintResponce(CategoryInformationResponse responce)
+        {
+            Console.WriteLine("Received responce");
+            foreach (var category in responce.Categories)
+            {
+                Console.WriteLine($"Id: {category.CategoryId}");
+                Console.WriteLine($"Name: {category.Name}");
+                Console.WriteLine($"Description: {category.Description}");
+                Console.WriteLine($"Photo: {category.Photo}");
+
+                Console.WriteLine();
             }
         }
     }
