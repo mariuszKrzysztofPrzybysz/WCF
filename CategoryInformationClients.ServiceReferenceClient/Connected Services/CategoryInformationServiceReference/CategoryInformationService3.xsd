@@ -4,6 +4,7 @@
   <xs:complexType name="CategoryInformationRequest">
     <xs:sequence>
       <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CategoryInformationRequest" nillable="true" type="tns:CategoryInformationRequest" />

@@ -7,5 +7,8 @@
     {
         [DataMember]
         public int CategoryId { get; set; }
+
+        [DataMember]
+        public string Description { get; set; }
     }
 }
