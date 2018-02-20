@@ -25,9 +25,6 @@ namespace CategoryInformationClients.ServiceReferenceClient.CategoryInformationS
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CategoryIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescriptionField;
-        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -47,19 +44,6 @@ namespace CategoryInformationClients.ServiceReferenceClient.CategoryInformationS
                 if ((this.CategoryIdField.Equals(value) != true)) {
                     this.CategoryIdField = value;
                     this.RaisePropertyChanged("CategoryId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
                 }
             }
         }
