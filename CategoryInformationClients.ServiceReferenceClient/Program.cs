@@ -5,31 +5,38 @@
 
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main(string[] args) => CallWithLargeMessage();
+
+        private static void CallWithLargeMessage()
         {
-            using (CategoryInformationServiceClient client = new CategoryInformationServiceClient("WSHttpBinding_ICategoryInformationService"))
+            using (CategoryInformationServiceClient
+                client = new CategoryInformationServiceClient("WSHttpBinding_ICategoryInformationService"))
             {
-                CategoryInformationResponse responce = null;
                 try
                 {
-                    responce = client.GetCategoryInformation(new CategoryInformationRequest
+                    var description = new System.Text.StringBuilder();
+                    for (int i = 0; i < 819; i++)
+                        description.Append("0123456789");
+                    description.Append("123");
+
+                    var response = client.GetCategoryInformation(new CategoryInformationRequest
                     {
-                        CategoryId = 1
+                        CategoryId = 1,
+                        Description = description.ToString()
                     });
 
-                    PrintResponce(responce);
+                    PrintResponse(response);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.ToString());
                 }
 
-                Console.WriteLine("Press [ENTER] to close client");
                 Console.ReadLine();
             }
         }
 
-        private static void PrintResponce(CategoryInformationResponse responce)
+        private static void PrintResponse(CategoryInformationResponse responce)
         {
             Console.WriteLine("Received responce");
             foreach (var category in responce.Categories)
